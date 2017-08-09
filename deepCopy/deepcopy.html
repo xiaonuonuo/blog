@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var obj = { a:1, arr: [2,3] };
+            var shallowObj = shallowCopy(obj);
+            console.log(shallowObj)
+            shallowObj.arr[1]=5;
+            console.log(obj.arr[1])
+            function shallowCopy(src) {
+                var dst = {};
+                for (var prop in src) {
+                    if (src.hasOwnProperty(prop)) {
+                      dst[prop] = src[prop];
+                    }
+                }
+                return dst;
+            }
+
+
+
+            var china = {
+            	  	nation : '中国',
+            	  	birthplaces:['北京','上海','广州'],
+            	  	skincolr :'yellow',
+            	  	friends:['sk','ls']
+        	    }
+        	  //深复制，要想达到深复制就需要用递归
+        	  function deepCopy(o,c){
+        	    var c = c || {}
+        	    for(var i in o){
+            	    if(typeof o[i] === 'object'){
+    	  	   	   	    //要考虑深复制问题了
+                        if(o[i].constructor === Array){
+                        	//这是数组
+                        	c[i] =[]
+                        }else{
+                        	//这是对象
+                        	c[i] = {}
+                        }
+                        deepCopy(o[i],c[i])
+    	  	   	    }else{
+    	  	   	   	    c[i] = o[i]
+    	  	   	    }
+        	  	}
+        	  	return c
+        	  }
+	  var result = {name:'result'}
+	  result = deepCopy(china,result)
+	  console.dir(result)
+        </script>
+    </body>
+</html>
