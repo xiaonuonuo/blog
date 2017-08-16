@@ -14,7 +14,7 @@ function Parent(name,age){
 }
 
 Parent.prototype = {
-    speakSometing(){
+    speakSometing:function(){
         console.log("I can speek chinese");
     }
 }
