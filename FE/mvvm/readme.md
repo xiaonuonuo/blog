@@ -386,6 +386,6 @@ MVVM.prototype = {
 
 最后，感谢您的阅读！
 
-[img1]: ./img/1.gif
-[img2]: ./img/2.png
-[img3]: ./img/3.png
+[img1]: img/1.gif
+[img2]: img/2.png
+[img3]: img/3.png
